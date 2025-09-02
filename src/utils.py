@@ -45,10 +45,12 @@ def setup_birth_date(date:str):
         return date_obj.strftime("%d-%M-%Y")
 
     return date
-
 def setup_datetime(date:str, time:str):
     if date and time:
-        return f"{date.replace("/", "-")} {time}"
+        return_value = f"{str(date).replace('/', '-')} {str(time)}"
+        print(f"Retornando (combinado): '{return_value}' (tipo: {type(return_value)})")
+        return return_value
+    print(f"Retornando (apenas data): '{date}' (tipo: {type(date)})")
     return date
 
 def concat_region_code(phone:str):
